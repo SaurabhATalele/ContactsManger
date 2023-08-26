@@ -1,18 +1,38 @@
 import React,{useEffect, useState} from 'react'
 import LineChart from './ChartComponents/LineGraph';
 import MapWithMarkers from './ChartComponents/MapWithMarkers';
+
 import axios from 'axios';
 
 const Chart = () => {
 
     const [chartData, setChartData] = useState({})
     const [chartDates, setChartDates] = useState([])
+    const [countriesData, setCountriesData] = useState([
+        {
+          name: 'Country A',
+          lat: 10,
+          lng: 20,
+          active: 1000,
+          recovered: 800,
+          deaths: 50,
+        },
+        {
+          name: 'Country B',
+          lat: 30,
+          lng: 40,
+          active: 500,
+          recovered: 300,
+          deaths: 20,
+        },
+        // ... other country data ...
+      ])
     const [userData, setUserData] = useState({
-        labels: chartDates,
+        labels: [],
         datasets: [
           {
             label: "Changes in cases",
-            data: chartData,
+            data: [],
             backgroundColor: [
               "rgba(75,192,192,1)",
               "#ecf0f1",
@@ -61,27 +81,23 @@ const Chart = () => {
     }
         fun()
 
+        const cout = async () => {
+            const data = await axios.get('https://disease.sh/v3/covid-19/countries')
+            console.log("Data is ",data);
+            setCountriesData(data.data.map((country) => ({
+                name: country.country,
+                lat: country.countryInfo.lat,
+                lng: country.countryInfo.long,
+                active: country.active,
+                recovered: country.recovered,
+                deaths: country.deaths,
+                })))
+        }
+        cout()
+
     },[])
 
-    const countriesData = [
-        {
-          name: 'Country A',
-          lat: 10,
-          lng: 20,
-          active: 1000,
-          recovered: 800,
-          deaths: 50,
-        },
-        {
-          name: 'Country B',
-          lat: 30,
-          lng: 40,
-          active: 500,
-          recovered: 300,
-          deaths: 20,
-        },
-        // ... other country data ...
-      ];
+
 
 
   return (

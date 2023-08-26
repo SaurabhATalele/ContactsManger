@@ -20,7 +20,7 @@ const Sidebar = () => {
         
         <li className="sidebar-li">
         
-          <Link to={"/"} className="list">
+          <Link to={"/chart"} className="list">
             Charts
           </Link>
         
