@@ -28,11 +28,11 @@ const Chart = () => {
         // ... other country data ...
       ])
     const [userData, setUserData] = useState({
-        labels: [],
+        labels: ["jan", "feb", "mar", "apr", "may", "jun", "jul", "aug", "sep", "oct"],
         datasets: [
           {
             label: "Changes in cases",
-            data: [],
+            data: [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],
             backgroundColor: [
               "rgba(75,192,192,1)",
               "#ecf0f1",
