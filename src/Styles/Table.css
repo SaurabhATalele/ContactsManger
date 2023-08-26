@@ -1,0 +1,27 @@
+table{
+    margin-top: 50px;
+    width: 90%;
+    height: 100%;
+
+}
+
+table .Edit{
+    background-color: #0084ff;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+table .View{
+    background-color: #00ff0d;
+    border: none;
+
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+table td{
+    padding: 10px;
+    text-align: center;
+    border-collapse: collapse;
+}

@@ -1,0 +1,20 @@
+.contact{
+    display: flex;
+    flex-direction: column;
+     margin-top: 20px;
+    align-items: center;
+    justify-content: center;
+
+}
+.contact .btn{
+    background-color: #793FDF;
+    color: white;
+    padding: 20px 20px;
+    border-radius: 10px;
+    font-size: 15px;
+    cursor: pointer;
+    border: none;
+    box-shadow: 0px 0px 4px 0px rgba(0,0,0,0.75);
+
+
+}
